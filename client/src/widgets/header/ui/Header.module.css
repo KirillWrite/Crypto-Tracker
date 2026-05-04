@@ -1,0 +1,46 @@
+.themeIconLight,
+.themeIconDark {
+  display: inline-block;
+}
+
+/* Светлая тема: показываем солнце, прячем луну */
+html[data-mantine-color-scheme="light"] .themeIconLight {
+  display: inline-block;
+}
+
+html[data-mantine-color-scheme="light"] .themeIconDark {
+  display: none;
+}
+
+/* Тёмная тема: показываем луну, прячем солнце */
+html[data-mantine-color-scheme="dark"] .themeIconLight {
+  display: none;
+}
+
+html[data-mantine-color-scheme="dark"] .themeIconDark {
+  display: inline-block;
+}
+
+/* Опционально: анимация при наведении */
+.themeButton {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.themeButton:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+html[data-mantine-color-scheme="dark"] .themeButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

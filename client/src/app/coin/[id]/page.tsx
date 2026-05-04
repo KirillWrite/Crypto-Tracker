@@ -1,10 +1,7 @@
-'use client'
+import React from 'react'
 
 export default function page() {
-    return (
-        <div>
-            Коин
-        </div>
-    );
+  return (
+    <div>page</div>
+  )
 }
-

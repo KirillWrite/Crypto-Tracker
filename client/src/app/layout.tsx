@@ -1,12 +1,13 @@
-import type { Metadata } from 'next';
-import './globals.css';
-import { Header } from '@/components/layout/Header/Header';
-import { Footer } from '@/components/layout/Footer/Footer';
-import { TemeProvider } from './provider/TemeProvider';
-import { ColorSchemeScript, mantineHtmlProps } from '@mantine/core';
+
+import type { Metadata } from "next";
+import { Providers } from "./providers";
+import { Header } from "@/widgets/header/ui/Header";
+import { Footer } from "@/widgets/footer/ui/Footer";
+import { ColorSchemeScript, mantineHtmlProps } from "@mantine/core";
 
 export const metadata: Metadata = {
-  title: 'Crypto',
+  title: "Моё приложение",
+  description: "My app",
 };
 
 export default function RootLayout({
@@ -15,16 +16,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" {...mantineHtmlProps}>
+    <html lang="en" {...mantineHtmlProps}>
       <head>
-        <ColorSchemeScript defaultColorScheme="dark" />
+        <ColorSchemeScript defaultColorScheme="auto" />
       </head>
       <body>
-        <TemeProvider>
+        <Providers>
           <Header />
           {children}
           <Footer />
-        </TemeProvider>
+        </Providers>
       </body>
     </html>
   );

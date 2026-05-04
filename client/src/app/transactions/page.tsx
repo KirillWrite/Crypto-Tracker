@@ -1,9 +1,5 @@
-'use client'
+import React from "react";
 
-export default function page() {
-    return (
-        <div>
-            Транзакции
-        </div>
-    );
+export default function TransactionsPage() {
+  return <div>TransactionsPage</div>;
 }

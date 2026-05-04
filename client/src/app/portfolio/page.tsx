@@ -1,9 +1,5 @@
-'use client'
+import React from "react";
 
-export default function page() {
-    return (
-        <div>
-            Портфолио
-        </div>
-    );
+export default function PortfolioPage() {
+  return <div>Port folioPage</div>;
 }

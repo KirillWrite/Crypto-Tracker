@@ -1,10 +1,5 @@
-'use client'
+import React from "react";
 
-export default function page() {
-    return (
-        <div>
-            Настройки
-        </div>
-    );
+export default function SettingsPage() {
+  return <div>SettingsPage</div>;
 }
-
