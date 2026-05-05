@@ -47,3 +47,10 @@ export type CoinDetails = {
     price_change_percentage_24h: number | null;
   };
 };
+
+export type GlobalData = {
+  total_market_cap: string,
+  market_cap_change_percentage_24h_usd: string,
+  total_volume: string,
+  market_cap_percentage: string,
+};

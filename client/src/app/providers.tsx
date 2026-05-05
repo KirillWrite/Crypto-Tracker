@@ -3,7 +3,7 @@
 import { MantineProvider } from '@mantine/core';
 import '@mantine/core/styles.css';
 import { Provider } from 'react-redux';
-import { persistor, store } from './store';
+import { persistor, store } from '@/app/store';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 
 export function Providers({ children }: { children: React.ReactNode }) {
