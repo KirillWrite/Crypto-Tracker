@@ -2,9 +2,25 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { coingeckoApi } from '@/entities/coin/api/coingeckoApi';
 import { transactionReducer } from '@/entities/transaction/slice/transactionsSlice';
 import { settingsReducer } from '@/entities/settings/slice/settingsSlice';
-import storage from 'redux-persist/lib/storage';
+// import storage from 'redux-persist/lib/storage';
 import { persistReducer, persistStore } from 'redux-persist';
 import { FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist/es/constants';
+import createWebStorage from 'redux-persist/es/storage/createWebStorage';
+
+type createNoopStorage = {
+  getItem: (key: string) => Promise<string | null>;
+  setItem: (key: string, value: unknown) => Promise<unknown>;
+  removeItem: () => Promise<void>;
+};
+
+const createNoopStorage = (): createNoopStorage => ({
+  getItem: async () => null,
+  setItem: async (_key: string, value: unknown) => value,
+  removeItem: async (): Promise<void> => {},
+});
+
+// Условное хранилище
+const storage = typeof window !== 'undefined' ? createWebStorage('local') : createNoopStorage();
 
 // объединяем редьюсеры в один корневой редьюсер
 const rootReducer = combineReducers({

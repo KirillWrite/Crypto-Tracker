@@ -1,7 +1,5 @@
-import React from 'react'
+'use client';
 
-export default function page() {
-  return (
-    <div>page</div>
-  )
+export default function page(): React.JSX.Element {
+  return <div>page</div>;
 }

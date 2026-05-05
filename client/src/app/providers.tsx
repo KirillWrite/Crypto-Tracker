@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { persistor, store } from '@/app/store';
 import { PersistGate } from 'redux-persist/lib/integration/react';
 
-export function Providers({ children }: { children: React.ReactNode }) {
+export function Providers({ children }: { children: React.ReactNode }): React.JSX.Element {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>

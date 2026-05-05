@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import type { CoinDetails, CoinMarket, SearchCoin, SearchResponse, GlobalData } from '../model/types';
+import type { CoinDetails, CoinMarket, SearchCoin, SearchResponse, GlobalStats } from '../model/types';
 
 export const coingeckoApi = createApi({
   reducerPath: 'coingeckoApi',
@@ -26,7 +26,7 @@ export const coingeckoApi = createApi({
       }),
     }),
 
-    getGlobalData: builder.query<GlobalData[], void>({
+    getGlobalStats: builder.query<GlobalStats, void>({
       query: () => ({
         url: '/global',
       }),
@@ -56,4 +56,4 @@ export const coingeckoApi = createApi({
     }),
   }),
 });
-export const { useGetTopCoinsQuery, useSearchCoinsQuery, useGetCoinDetailsQuery } = coingeckoApi;
+export const { useGetTopCoinsQuery, useSearchCoinsQuery, useGetCoinDetailsQuery, useGetGlobalStatsQuery } = coingeckoApi;

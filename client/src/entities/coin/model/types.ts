@@ -48,9 +48,18 @@ export type CoinDetails = {
   };
 };
 
-export type GlobalData = {
-  total_market_cap: string,
-  market_cap_change_percentage_24h_usd: string,
-  total_volume: string,
-  market_cap_percentage: string,
+export type GlobalStats = {
+  data: {
+    total_market_cap: {
+      usd: number;
+      btc: number;
+    };
+    total_volume: {
+      usd: number;
+    };
+    market_cap_percentage: {
+      btc: number;
+    };
+    market_cap_change_percentage_24h_usd: number;
+  };
 };

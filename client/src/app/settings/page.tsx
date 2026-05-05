@@ -1,5 +1,5 @@
-import React from "react";
+'use client';
 
-export default function SettingsPage() {
+export default function SettingsPage(): React.JSX.Element {
   return <div>SettingsPage</div>;
 }

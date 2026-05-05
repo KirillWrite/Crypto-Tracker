@@ -1,5 +1,5 @@
-import React from "react";
+'use client';
 
-export default function TransactionsPage() {
+export default function TransactionsPage(): React.JSX.Element {
   return <div>TransactionsPage</div>;
 }
