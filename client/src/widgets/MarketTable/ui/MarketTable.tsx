@@ -13,13 +13,7 @@ interface MarketTableProps {
   searchTerm: string;
 }
 
-export function MarketTable({
-  data,
-  filterData,
-  toggleFavorite,
-  favorites,
-  searchTerm,
-}: MarketTableProps): React.JSX.Element {
+export function MarketTable({ data, filterData, toggleFavorite, favorites, searchTerm }: MarketTableProps): React.JSX.Element {
   // фильтр
   const filteredData = useMemo(() => {
     if (!data) return [];
@@ -48,7 +42,7 @@ export function MarketTable({
 
   return (
     <div>
-      <div className={styles.header}>
+      <div className={styles.coinRow}>
         <div>#</div>
         <div>Название</div>
         <div>Цена</div>
@@ -60,7 +54,6 @@ export function MarketTable({
         <div>Тренд 7 дней</div>
         <div>Избранное</div>
       </div>
-
       {filteredData?.length === 0 ? (
         <p>Монета не найдена</p>
       ) : (
@@ -70,26 +63,22 @@ export function MarketTable({
               <div>{coin.market_cap_rank}</div>
               <div>
                 <Image src={coin.image} alt={coin.name} width={20} height={20} />
-              </div>
-              <div>
                 {coin.name} ({coin.symbol.toUpperCase()})
               </div>
               <div>${coin.current_price?.toLocaleString()}</div>
-              <div className={coin.price_change_percentage_1h_in_currency > 0 ? 'positive' : 'negative'}>
+              <div className={`${coin.price_change_percentage_1h_in_currency > 0 ? styles.positive : styles.negative} ${styles.box}`}>
                 {coin.price_change_percentage_1h_in_currency?.toFixed(2)}%
               </div>
-              <div className={coin.price_change_percentage_24h_in_currency > 0 ? 'positive' : 'negative'}>
+              <div className={`${coin.price_change_percentage_24h_in_currency > 0 ? styles.positive : styles.negative} ${styles.box}`}>
                 {coin.price_change_percentage_24h_in_currency?.toFixed(2)}%
               </div>
-              <div className={coin.price_change_percentage_7d_in_currency > 0 ? 'positive' : 'negative'}>
+              <div className={`${coin.price_change_percentage_7d_in_currency > 0 ? styles.positive : styles.negative} ${styles.box}`}>
                 {coin.price_change_percentage_7d_in_currency?.toFixed(2)}%
               </div>
               <div>${coin.market_cap?.toLocaleString()}</div>
               <div>${coin.total_volume?.toLocaleString()}</div>
               <div>Тренд</div>
-              <button onClick={() => toggleFavorite(coin.id)}>
-                {favorites.includes(coin.id) ? '⭐' : '☆'}
-              </button>
+              <button onClick={() => toggleFavorite(coin.id)}>{favorites.includes(coin.id) ? '⭐' : '☆'}</button>
             </div>
           ))}
         </div>

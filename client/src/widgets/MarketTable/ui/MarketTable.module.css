@@ -2,9 +2,32 @@
     display: flex;
     gap: 20px;
 }
+.header div{
+ width: 100px;
+}
+
+.header div:first-child{
+ width: 3px;
+}
 
 .coinRow {
     display: flex;
     gap: 20px;
     align-items: center;
+    flex-wrap: wrap;
+}
+.positive {
+    color: green;
+} 
+.negative {
+    color: red;
+}
+
+.coinRow div{
+    width: 100px;
+    word-wrap: break-word;
+
+}
+.coinRow div:first-child{
+    width: 3px;
 }

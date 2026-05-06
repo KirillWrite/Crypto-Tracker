@@ -18,7 +18,7 @@ export default function MarketPage(): React.JSX.Element {
   const [searchTerm, setSearchTerm] = useState('');
   const [favorites, setFavorites] = useState<string[]>(() => updateFavoritesFromStorage());
 
-  const toggleFavorite = (coinId: string) => {
+  const toggleFavorite = (coinId: string): void => {
     let updatedFavorites;
     if (favorites.includes(coinId)) {
       updatedFavorites = favorites.filter((id) => id !== coinId);

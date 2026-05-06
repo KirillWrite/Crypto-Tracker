@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import styles from './SearchCoin.module.css';
 
 interface SearchCoinProps {
