@@ -22,6 +22,7 @@ export const coingeckoApi = createApi({
           order: 'market_cap_desc',
           per_page: 100,
           page: 1,
+          price_change_percentage: '1h,24h,7d', 
         },
       }),
     }),

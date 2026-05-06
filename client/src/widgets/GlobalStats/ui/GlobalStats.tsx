@@ -6,7 +6,7 @@ export function GlobalStats(): React.JSX.Element {
   const { data, isLoading, error } = useGetGlobalStatsQuery();
 
   if (isLoading) {
-    return <div>Loading top coins...</div>;
+    return <div>Loading global stats...</div>;
   }
   if (error) {
     return <div>Failed to load global stats data</div>;

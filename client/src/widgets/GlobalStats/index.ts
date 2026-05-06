@@ -1,0 +1,1 @@
+export { GlobalStats } from './ui/GlobalStats';
