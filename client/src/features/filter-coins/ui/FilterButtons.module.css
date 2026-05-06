@@ -1,0 +1,13 @@
+.button {
+    gap: 50px;
+}
+
+.active {
+    color: white;
+    background-color:green
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}

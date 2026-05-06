@@ -1,5 +1,7 @@
 'use client';
 
+import styles from './FilterButtons.module.css';
+
 interface FilterButtonsProps {
   filterData: string;
   setFilterData: (filter: string) => void;
@@ -15,12 +17,12 @@ export function FilterButtons({ filterData, setFilterData, favorites }: FilterBu
   ];
 
   return (
-    <div>
+    <div className={styles.container}>
       {filters.map((filter) => (
         <button 
           key={filter.id} 
           onClick={() => setFilterData(filter.id)}
-          className={filterData === filter.id ? 'active' : ''}
+          className={`${styles.button} ${filterData === filter.id ? styles.active : ''}`}
         >
           {filter.label}
         </button>
